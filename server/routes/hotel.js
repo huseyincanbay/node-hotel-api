@@ -1,5 +1,5 @@
 const HotelController = require("./controllers/hotel.js");
-const { verifyAdmin } = require("./middleware/verify.js");
+const { verifyAdmin } = require("./middleware/authMiddleware.js");
 
 const express = require("express");
 const router = express.Router();
