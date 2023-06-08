@@ -2,7 +2,7 @@ const User = require("../models/User.js");
 const bcrypt = require("bcryptjs");
 const jwt = require("jasonwebtoken");
 
-const register = async () => {
+const register = async (req, res, next) => {
   const { username, password, email } = req.body;
   try {
     const user = await User.findOne(email);
@@ -32,7 +32,7 @@ const register = async () => {
   }
 };
 
-const login = async () => {
+const login = async (req, res, next) => {
   const { password, email } = req.body;
   try {
     const user = await User.findOne(email);
