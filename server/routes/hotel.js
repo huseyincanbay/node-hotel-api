@@ -1,7 +1,7 @@
+const HotelController = require("./controllers/hotel.js");
+
 const express = require('express');
 const router = express.Router();
-
-const HotelController = require("./controllers/hotel.js");
 
 router.post('/createHotel', HotelController.createHotel);
 router.put('/updateHotel/:id', HotelController.updateHotel);
