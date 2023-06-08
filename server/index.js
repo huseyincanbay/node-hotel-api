@@ -6,9 +6,9 @@ const dotenv = require('dotenv');
 const db = require('./config/db.js');
 
 //routes
-const hotelRoutes = require('./routes/hotel.js').default;
-const hotelRoomRoutes = require('./routes/hotel-room.js').default;
-const authRoutes = require('./routes/auth.js').default;
+const hotelRoutes = require('./routes/hotel.js');
+const hotelRoomRoutes = require('./routes/hotel-room.js');
+const authRoutes = require('./routes/auth.js');
 const userRoutes = require('./routes/user.js');
 
 
