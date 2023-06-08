@@ -2,7 +2,7 @@ const Hotel = require("../models/Hotel.js");
 const HotelRoom = require("../models/HotelRoom.js");
 
 const createRoom = async (req, res, next) => {
-  const { hotelId } = req.params.hotelid;
+  const hotelId = req.params.hotelid;
   try {
     const room = await HotelRoom.create(req.body);
     await Hotel.findByIdAndUpdate(hotelId, { $push: { rooms: room._id } });
@@ -26,7 +26,7 @@ const updateRoom = async (req, res, next) => {
 };
 
 const deleteRoom = async (req, res, next) => {
-  const { hotelId } = req.params.hotelid;
+  const hotelId = req.params.hotelid;
   try {
     await HotelRoom.findByIdAndDelete(req.params.id);
     await Hotel.findByIdAndUpdate(hotelId, { $pull: { rooms: req.params.id } });
